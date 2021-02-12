@@ -6,19 +6,19 @@ namespace LeapYears
 {
     class Program
     {
-        public static void PrintLeapYears()
+        public static void PrintLeapYears(int startYear, int count)
         {
-            int count = 0;
+             
             int i = 1;
-            int startYear = 2021;
-            while (count < 20)
+            
+            while (count > 0)
             {
                 if (DateTime.DaysInMonth(startYear + i, 2) == 29)
                 {
                     Console.WriteLine(startYear + i);
-                    count += 1;
+                    count --;
                 }
-                if (count == 0)
+                if (count == 20)
                 {
                     i++;
                 }
@@ -30,7 +30,9 @@ namespace LeapYears
         }
         static void Main()
         {
-            PrintLeapYears();
+            int startYear = 2021;
+            int count = 20;
+            PrintLeapYears( startYear, count);
         }
     }
 }
