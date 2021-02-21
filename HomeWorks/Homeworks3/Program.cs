@@ -126,7 +126,7 @@ namespace Homeworks3
                 }
 
             }
-            InputArray = new int[temp.Length];
+            
             InputArray = temp;
 
         }
