@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintWordsInRectangle", "..
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextEncoder", "..\TextEncoder\TextEncoder.csproj", "{82422AD3-9327-4EB8-915C-353BDEF8622B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homeworks2", "Homeworks2\Homeworks2.csproj", "{1CAF8FA2-EAAA-499F-A709-7F13289292DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homeworks2", "Homeworks2\Homeworks2.csproj", "{1CAF8FA2-EAAA-499F-A709-7F13289292DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homeworks3", "Homeworks3\Homeworks3.csproj", "{B0944F8C-B143-42D5-ABFF-C4D02CC507B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{1CAF8FA2-EAAA-499F-A709-7F13289292DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CAF8FA2-EAAA-499F-A709-7F13289292DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CAF8FA2-EAAA-499F-A709-7F13289292DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0944F8C-B143-42D5-ABFF-C4D02CC507B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0944F8C-B143-42D5-ABFF-C4D02CC507B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0944F8C-B143-42D5-ABFF-C4D02CC507B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0944F8C-B143-42D5-ABFF-C4D02CC507B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
