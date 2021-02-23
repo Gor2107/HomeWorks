@@ -284,6 +284,47 @@ namespace Homeworks3
             //}
             #endregion
 
+            #region Excercise 4.Rectangles
+            //Rectangle rectangleA = new Rectangle(4, 7, 2, 11);
+            //Rectangle rectangleB = new Rectangle(2, 7, 0, 7);
+            //if (!rectangleA.CheckLappingRectangles(rectangleB))
+            //{
+            //    Console.WriteLine("rectangel A isn't overlapping rectangle B");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("rectangel A is overlapping rectangle B");
+            //}
+            //Console.WriteLine();
+            //Rectangle rectangleC = new Rectangle(4, 7, 2, 11);
+            //Rectangle rectangleD = new Rectangle(1, 7, 0, 7);
+            //if (!rectangleC.CheckLappingRectangles(rectangleD))
+            //{
+            //    Console.WriteLine("rectangel C isn't overlapping rectangle D");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("rectangel C is overlapping rectangle D");
+            //}
+
+            //if (!rectangleC.CheckLappingRectangles(rectangleA))
+            //{
+            //    Console.WriteLine("rectangel C isn't overlapping rectangle A");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("rectangel C is overlapping rectangle A");
+            //}
+
+            //if (!rectangleB.CheckLappingRectangles(rectangleD))
+            //{
+            //    Console.WriteLine("rectangel B isn't overlapping rectangle D");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("rectangel B is overlapping rectangle D");
+            //}
+            #endregion
         }
     }
 }

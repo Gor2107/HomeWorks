@@ -178,7 +178,7 @@ namespace Homeworks2
         }
         static void Main()
         {
-
+            /*
             //Excercise 1.String Compression
 
             Console.WriteLine("Excersie 1. \n Write your text to make compression:");
@@ -224,7 +224,7 @@ namespace Homeworks2
             }
 
 
-
+            */
             //Excercise 5. Calculator
 
             int action = 0;
