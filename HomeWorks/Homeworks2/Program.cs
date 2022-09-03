@@ -227,53 +227,53 @@ namespace Homeworks2
             */
             //Excercise 5. Calculator
 
-            int action = 0;
-            while (action != 5)
-            {
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("Enter the first integer: ");
+            //int action = 0;
+            //while (action != 5)
+            //{
+            //    Console.ForegroundColor = ConsoleColor.Blue;
+            //    Console.Write("Enter the first integer: ");
 
-                Console.ForegroundColor = ConsoleColor.Red;
-                bool isparsed2 = int.TryParse(Console.ReadLine(), out int num1);
+            //    Console.ForegroundColor = ConsoleColor.Red;
+            //    bool isparsed2 = int.TryParse(Console.ReadLine(), out int num1);
 
-                if (isparsed2)
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write("Enter the second integer: ");
+            //    if (isparsed2)
+            //    {
+            //        Console.ForegroundColor = ConsoleColor.Blue;
+            //        Console.Write("Enter the second integer: ");
 
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    isparsed2 = int.TryParse(Console.ReadLine(), out int num2);
+            //        Console.ForegroundColor = ConsoleColor.Red;
+            //        isparsed2 = int.TryParse(Console.ReadLine(), out int num2);
 
-                    if (isparsed2)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.Write("Choose one of the options:\n1-Addition.\n2-Subtraction.\n3-Multiplication.\n4-Division.\n5-Exit.\n\n\nInput your choice: ");
+            //        if (isparsed2)
+            //        {
+            //            Console.ForegroundColor = ConsoleColor.Blue;
+            //            Console.Write("Choose one of the options:\n1-Addition.\n2-Subtraction.\n3-Multiplication.\n4-Division.\n5-Exit.\n\n\nInput your choice: ");
 
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        isparsed2 = int.TryParse(Console.ReadLine(), out action);
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        if (isparsed2)
-                        {
-                            Console.WriteLine($"{Calculator(num1, num2, action)}\n");
-                        }
-                        else
-                        {
-                            Console.WriteLine("action is incorrect\n");
-                        }
+            //            Console.ForegroundColor = ConsoleColor.Red;
+            //            isparsed2 = int.TryParse(Console.ReadLine(), out action);
+            //            Console.ForegroundColor = ConsoleColor.Blue;
+            //            if (isparsed2)
+            //            {
+            //                Console.WriteLine($"{Calculator(num1, num2, action)}\n");
+            //            }
+            //            else
+            //            {
+            //                Console.WriteLine("action is incorrect\n");
+            //            }
 
-                    }
-                    else
-                    {
-                        Console.WriteLine("second integer is incorrect\n");
-                    }
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("second integer is incorrect\n");
+            //        }
 
-                }
-                else
-                {
-                    Console.WriteLine("first integer is incorrect\n");
-                }
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("first integer is incorrect\n");
+            //    }
 
-            }
+            //}
 
         }
     }
