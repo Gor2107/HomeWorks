@@ -7,38 +7,29 @@ namespace Tester
 {
     public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-
-            var x = new TaskFactory().StartNew(() => Singletone.GetInstance());
-            var y = new TaskFactory().StartNew(() => Singletone.GetInstance());
-            if (x?.Result != null && y?.Result != null)
+            //ThreadPool.QueueUserWorkItem(new WaitCallback(WriteChar), '*');
+            //ThreadPool.QueueUserWorkItem(new WaitCallback(WriteChar), '!');
+            ThreadWorker<int> worker = new(Calculate);
+            worker.Start(10);
+            while (!worker.IsCompleted)
             {
-                Console.WriteLine(x.Result.GetHashCode());
-                Console.WriteLine(y.Result.GetHashCode());
+                Console.Write('#');
+                Thread.Sleep(50);
             }
-
+            Console.WriteLine(" Result: {0}",worker.Result);
+            Console.ReadLine();
         }
-    }
-    class Singletone
-    {
-        private static object locker = new object();
-        private static volatile Singletone _instance;
-        public static Singletone GetInstance()
+        public static int Calculate(object sleepTime)
         {
-            lock (locker)
+            int num = (int)sleepTime;
+            for (int i = 0; i < 10; i++)
             {
-                if (_instance == null)
-                {
-                    _instance = new Singletone();
-                }
-
-                return _instance;
+                Thread.Sleep(num);
+                num += i;
             }
-        }
-        Singletone()
-        {
-
+            return num;
         }
     }
 }

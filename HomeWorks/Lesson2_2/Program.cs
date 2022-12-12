@@ -7,16 +7,12 @@ namespace Lesson2_2
     {
         static void Main()
         {
-            var worker = new ThreadWorker(WriteChar);
+            ThreadWorker worker = new(WriteChar);
+            ThreadWorker worker1 = new(WriteChar);
             worker.Start('*');
-            worker.Start('-');
-            for (int i = 0; i < 160; i++)
-            {
-                Thread.Sleep(23);
-                Console.Write("%");
-            }
+            worker1.Start('!');
             worker.Wait();
-            Console.WriteLine("Main fineshed");
+            worker1.Wait();
             Console.ReadLine();
         }
 

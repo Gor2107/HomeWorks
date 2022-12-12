@@ -10,51 +10,41 @@ namespace Lesson2_2
 
     class ThreadWorker
     {
-        public Action<object> action;
+        private Action<object> _action;
         public bool IsCompleted { get; set; }
-        public bool IsFaulted { get; set; }
         public bool IsSuccess { get; set; }
+        public bool IsFaulted { get; set; }
         public Exception Exception { get; set; }
-        public ThreadWorker(Action<object> action)
-        {
-            this.action = action ?? throw new ArgumentNullException(nameof(action));
-        }
+        public ThreadWorker(Action<object> action) => _action = action ?? throw new ArgumentException(nameof(action));
+
         public void Start(object state)
         {
-            var thread = new Thread(new ThreadStart(
-                () =>
-                {
-                    try
-                    {
-                        action.Invoke(state);
-                        IsSuccess = true;
-                    }
-                    catch (Exception ex)
-                    {
-                        IsSuccess = false;
-                        IsFaulted = true;
-                        Exception = ex;
-                        throw;
-                    }
-                    finally
-                    {
-                        IsCompleted = true;
-                    }
-                }
-                ));
-            thread.Start();
+            ThreadPool.QueueUserWorkItem(new WaitCallback(ThreadExecutor), state);
+        }
+
+        private void ThreadExecutor(object state)
+        {
+            try
+            {
+                _action.Invoke(state);
+                IsSuccess = true;
+            }
+            catch (Exception ex)
+            {
+                IsFaulted = true;
+                IsSuccess = false;
+                Exception = ex;
+            }
+            finally
+            {
+                IsCompleted = true;
+            }
         }
 
         public void Wait()
         {
-            while (IsCompleted == false)
-            {
-                Thread.Sleep(100);
-            }
-            if (Exception != null)
-            {
-                throw Exception;
-            }
+            while (!IsCompleted) Thread.Sleep(100);
+            if (Exception != null) throw Exception;
         }
     }
 }

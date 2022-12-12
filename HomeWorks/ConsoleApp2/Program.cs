@@ -8,9 +8,8 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
              ThreadPool.QueueUserWorkItem(new WaitCallback(WriteChar),'*');
-             ThreadPool.QueueUserWorkItem(new WaitCallback(WriteChar),'-');
+             ThreadPool.QueueUserWorkItem(new WaitCallback(WriteChar),'!');
             Console.ReadLine();
-            Console.WriteLine("Finished");
         }
         public static void WriteChar(object symbol)
         {

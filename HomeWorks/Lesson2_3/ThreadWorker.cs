@@ -10,12 +10,12 @@ namespace Lesson2_3
 
     class ThreadWorker<TResult>
     {
+        private TResult _result;
         public Func<object, TResult> func;
         public bool IsCompleted { get; private set; }
         public bool IsFaulted { get; private set; }
         public bool IsSuccess { get; private set; }
         public Exception Exception { get; private set; }
-        private TResult _result;
         public TResult Result
         {
             get
@@ -24,9 +24,9 @@ namespace Lesson2_3
                 {
                     Thread.Sleep(150);
                 }
-                
-                    return IsSuccess == true && Exception == null ? _result : throw Exception;
-                
+
+                return IsSuccess == true && Exception == null ? _result : throw Exception;
+
             }
             private set { }
         }
@@ -45,7 +45,7 @@ namespace Lesson2_3
 
             try
             {
-               _result = func.Invoke(state);
+                _result = func.Invoke(state);
                 IsSuccess = true;
             }
             catch (Exception ex)
@@ -59,19 +59,7 @@ namespace Lesson2_3
             {
                 IsCompleted = true;
             }
-
-
         }
-        public void Wait()
-        {
-            while (IsCompleted == false)
-            {
-                Thread.Sleep(100);
-            }
-            if (Exception != null)
-            {
-                throw Exception;
-            }
-        }
+
     }
 }
